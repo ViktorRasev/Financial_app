@@ -18,6 +18,7 @@ const getApiUrl = (value: string) => `https://www.alphavantage.co/query?function
 
 const transformResponse = ({ response }: AjaxResponse) => {
   return response.bestMatches.map(item => ({
+    id: item["1. symbol"],
     symbol: item["1. symbol"],
     name: item["2. name"],
     type: item["3. type"],

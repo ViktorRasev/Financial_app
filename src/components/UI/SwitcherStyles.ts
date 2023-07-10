@@ -13,6 +13,7 @@ export const SwitcherContainer = styled('div')<SwitcherContainerProps>`
   padding: 3px;
   background-color: ${props => props.theme.primary};
   color: ${props => props.theme.text};
+  border: 1px solid #317d88;
   display: flex;
   align-items: center;
   cursor: pointer;

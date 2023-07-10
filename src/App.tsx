@@ -6,9 +6,9 @@ import { GlobalStyles } from "./components/styled/GlobalStyles";
 import ApiFetch from "./components/ApiFetch";
 import Header from "./components/Layout/Header";
 import Content from "./components/Layout/Content"
-import {Autocomplete} from "./components/Autocomplete";
 import { darkTheme, lightTheme } from "./components/styled/Theme";
-import { getSuggestions, Suggestion } from "./services/suggestion-service";
+import Playground from "./components/Layout/Playground";
+
 const App: FC = () => {
   const [themeValue, setThemeValue] = useState<"light" | "dark">("light");
 
@@ -16,20 +16,17 @@ const App: FC = () => {
       setThemeValue(themeValue === "light" ? "dark" : "light");
   };
 
-
   return (
     <ThemeProvider theme={themeValue === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <div className="App">
         <Header themeValue={themeValue} toggleTheme={toggleTheme} />
         <Content />
+
         <ApiFetch />
-          {/*<Autocomplete*/}
-          {/*    getSuggestions={getSuggestions}*/}
-          {/*    renderSuggestion={renderSuggestion}*/}
-          {/*    onSelect={suggestion => console.log(suggestion)}*/}
-          {/*/>*/}
+
       </div>
+        <Playground/>
     </ThemeProvider>
   );
 };
